@@ -1,26 +1,16 @@
 
+n = int(input().strip())
+score = list(map(int, input().strip().split(' ')))
 
-d = {'[': ']', '{': '}', '(': ')'}
+mini, minicnt = score[0], 0
+maxi, maxicnt = score[0], 0
 
-def is_matched(expression):
-    l = []
-    if len(expression) % 2 != 0:
-        return False
-    for b in expression:
-        if b not in d:
-            break
-        l.append(d[b])
-    l.reverse()
-    check = ''.join(l)
-    if check == expression[int(len(expression) / 2):]:
-        return True
-    return False
+for x in score:
+    if x < mini:
+        mini = x
+        minicnt += 1
+    if x > maxi:
+        maxi = x
+        maxicnt += 1
 
-
-t = int(input().strip())
-for a0 in range(t):
-    expression = input().strip()
-    if is_matched(expression):
-        print("YES")
-    else:
-        print("NO")
+print(maxicnt, minicnt)

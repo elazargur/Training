@@ -10,5 +10,5 @@ client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 client.messages.create(
     to="+972524642459",
     from_= MY_NUM,
-    body="Shabbat Shalom!",
+    body="Love!",
 )
